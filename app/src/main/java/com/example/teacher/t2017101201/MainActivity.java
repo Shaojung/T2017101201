@@ -11,6 +11,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -41,7 +43,15 @@ public class MainActivity extends AppCompatActivity {
                         {
                             Log.d("NET", a.district);
                         }
-
+                        String str = gson.toJson(ah);
+                        Log.d("NET", str);
+                        ArrayList<AnimalHome> list1 = new ArrayList<>();
+                        for (AnimalHome a : ah)
+                        {
+                            list1.add(a);
+                        }
+                        String str2 = gson.toJson(list1);
+                        Log.d("NET", str2);
                     }
                 }, new Response.ErrorListener() {
             @Override
